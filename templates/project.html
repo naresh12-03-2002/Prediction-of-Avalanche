@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title >We Are With You</title>
+</head>
+</style>
+<body style="background-color:aqua;" >
+	<h1 style="text-align:center;font-family:courier;color:coral"><b>Avalanche Prevention</b></h1>
+	<h2 style="text-align:center;"><i>Predicting Avalanche Formation</i></h2>
+	<!--Input given to our model -->
+    <form  style="text-align:center; color: crimson; border: 30px; text-decoration: solid;"  action="{{ url_for('predict1')}}" method="post" >
+        <div style="margin: 20px;border:azure;">
+    	Slope:<input title="integer"  placeholder=" range 0 to 45" name="a" type="text"  required="required" value=''  /><br><br>
+       Snow Density: <input title="integer"  placeholder =" range 0 to 50"name="b" type="text"  required="required" value=''  /><br><br>
+	Air Temperature :<input title="integer" placeholder="range -30 to +30" name="c" type="text"   required="required" value='' /><br><br>
+       Wind: <input title="integer" name="d" type="text" placeholder="range 0 to 30" required="required" value='' /><br><br>
+	<label for="Forest Density" >Forest Density:</label> 
+        <select name="e" id="Forest Density" > 
+            <option value=2>High</option> 
+            <option value=1>Medium</option> 
+            <option value=0>Low</option> 
+        </select> <br><br>
+	<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </div>
+    
+    </form>
+    
+	<p style="background-color:powderblue;text-align:center">{{prediction_text}}</p>
+
+		
+</body>
+</html>

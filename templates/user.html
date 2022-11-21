@@ -1,0 +1,51 @@
+<html>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+<script language="javascript">
+function validate()
+{
+var user=document.f1.username.value;
+var pass=document.f1.password.value;
+alphadigit=0;
+alpha=/[a-zA-Z]/;
+digit=/[0-9]/;
+if(pass.match(alpha) && pass.match(digit))
+{
+alphadigit=1;
+}
+else if(user=="" || user.length<7)
+{
+   alert("please enter 8 length username");
+   return false;
+}
+else if(pass=="" || pass.length<7)
+{
+   alert("please enter 8 length password");
+   return false;
+}
+else if(alphadigit==0)
+{
+alert("please enter atleast 1 number & alphabet");
+return false;
+}
+else{
+alert("success");
+return true;
+}
+return true;
+}
+</script>
+</head>
+<body>
+<div class="loginbox">
+<img src="avatar.png" class="avatar">
+<h1 >Login Page</h1>
+<form name="f1" action="" onsubmit="project.html">
+UserName<input type="text" name="username" placeholder="Enter username" value=""><br><br>
+Password<input type="password" name="password" placeholder="Enter password" value=""><br><br>
+<button onclick="project.html">login</button>
+<button>Signup</button>
+</div>
+</form>
+</body>
+</html>
